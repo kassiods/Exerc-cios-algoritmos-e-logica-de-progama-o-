@@ -7,10 +7,22 @@ lista = [[1, 2, 3],
          [4, 5, 6],
          [7, 8, 9]]
 
-# Imprimindo a diagonal principal da lista
-# Usando uma List Comprehension para extrair a diagonal principal:
-# range(len(lista)) gera uma sequência de índices de 0 até o comprimento da lista menos 1.
-# lista[i][i] acessa o elemento na posição [i][i] da matriz.
-# for i in range(len(lista)) percorre sobre cada índice e seleciona o elemento correspondente da diagonal principal.
-diagonal_principal = [lista[i][i] for i in range(len(lista))]
-print(diagonal_principal)
+# Cria uma matriz 3x3 preenchida com números inteiros inseridos pelo usuário
+a = [[int(input(f"Digite um numero: ")) for j in range(3)] for i in range(3)]
+
+# Inicializa uma lista vazia para armazenar os elementos da diagonal principal
+dp = []
+
+# Percorre cada linha da matriz
+for i in range(3):
+    # Percorre cada coluna da matriz
+    for j in range(3):
+        # Verifica se o índice da linha é igual ao índice da coluna (elemento da diagonal principal)
+        if i == j:
+            # Armazena o elemento da diagonal principal
+            d = a[i][i]
+            # Adiciona o elemento à lista dp
+            dp.append(d)
+
+# Exibe os elementos da diagonal principal
+print(f"Diagonal principal: {dp}")
